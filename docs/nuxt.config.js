@@ -1,17 +1,15 @@
-import theme from '@nuxt/content-theme-docs'
+import { withDocus } from 'docus'
 
-export default theme({
-  env: {
-    GITHUB_TOKEN: process.env.GITHUB_TOKEN
+export default withDocus({
+  docus: {
+    colors: {
+      primary: '#38b2ac'
+    }
   },
-  loading: { color: '#38b2ac' },
   buildModules: [
-    // https://github.com/bdrtsky/nuxt-ackee
-    'nuxt-ackee'
+    'vue-plausible'
   ],
-  ackee: {
-    server: 'https://ackee.nuxtjs.com',
-    domainId: '9dfafc05-b435-4ebd-a474-b836e6678e92',
-    detailed: true
+  plausible: {
+    domain: 'tailwindcss.nuxtjs.org'
   }
 })
